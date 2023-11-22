@@ -1,0 +1,10 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/dylan/Documents/CSC240/Lab3-DiceGame'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _rollDice, symObjAddr: 0x0, symBinAddr: 0x100003B20, symSize: 0x20 }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _rollDice, symObjAddr: 0x0, symBinAddr: 0x100003B20, symSize: 0x20 }
+  - { offsetInCU: 0x61, offset: 0x61, size: 0x8, addend: 0x0, symName: _calcPoints, symObjAddr: 0x20, symBinAddr: 0x100003B40, symSize: 0x80 }
+  - { offsetInCU: 0x97, offset: 0x97, size: 0x8, addend: 0x0, symName: _playerTurn, symObjAddr: 0xA0, symBinAddr: 0x100003BC0, symSize: 0x190 }
+  - { offsetInCU: 0x10F, offset: 0x10F, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x230, symBinAddr: 0x100003D50, symSize: 0xFD }
+...
