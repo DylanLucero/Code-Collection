@@ -18,13 +18,12 @@ double Plant :: getCost(){ return cost; }
 bool Plant :: operator == (string pName){ return (name == pName); }
 
 // Display Formatting
-void Plant :: display(ostream& out){ out << name << " $" << cost; }
+void Plant :: display(ostream& out){ out << name << "  $" << cost; }
 
 ostream& operator << (ostream& out, Plant& plant){
     plant.display(out);
     return out;
 }
-
 
 
 // Flower Class
@@ -37,11 +36,11 @@ string Flower :: getColor(){ return color; }
 
 void Flower :: display(ostream& out){
     Plant :: display(out);
-    out << " " << color;
+    out << "  " << color;
     if(isAnnual){
-        out << "        Annual";
+        out << "  Annual";
     } else{
-        out << "        Perennial";
+        out << "  Perennial";
     }
 }
 
