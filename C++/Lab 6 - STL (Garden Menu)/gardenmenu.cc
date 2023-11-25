@@ -22,20 +22,32 @@ int main() {
     while (true) {
         cout << "-------------------\n|   Garden Menu   |\n| by Dylan Lucero |\n-------------------\n";
 
-        cout << "1. Add plant\n2. Remove plant\n3. Display\n4. Total cost\n5. Sort by name\n6. Sort by cost\n7. Quit\n";
-        cin >> choice;
+
+        cout << "1. Add Plant\n2. Remove Plant\n3. Display\n4. Total Cost\n5. Sort by Name\n6. Sort by Cost\n7. Quit\n";
+        cin >> choice;  
+
+        // Check if cin took the correct type, prevents infinite loop
+        if (cin.fail()){
+            cout << "Type Error - integers only\n" << "Exiting" << endl;
+            return 0;
+        }
+        
+        // Switch statement for menu
         switch (choice) {
+            
+            // Add Plant Case
             case 1: {
                 
-                cout << "Enter plant type (P - plant   F- flower): ";
+                cout << "Enter plant type (P - Plant   F - Flower): ";
                 cin >> type;
 
-
+                // Check that only F and P are accepted
                 if(type != 'F' && type != 'f' && type != 'P' && type != 'p'){
                     cout << "Invalid plant type.\n";
                     break;
                 }
 
+                // Flower 
                 if(type == 'F' || type == 'f'){
 
                     cout << "Enter the flower name: ";
@@ -56,6 +68,7 @@ int main() {
                     plants.push_back(new Flower(name, cost, color, isAnnual));
                     break;
 
+                    // Plant
                 }else if(type == 'P'|| type== 'p'){
 
                     cout << "Enter the plant name: ";
@@ -68,6 +81,8 @@ int main() {
                     break;
                     }
                 }
+                
+            // Remove Plant Case
             case 2: {
                 string name;
                 cout << "Enter plant name: ";
@@ -89,6 +104,8 @@ int main() {
                     }
                 }
             }
+
+            // Display Plants Case
             case 3: {
                 int n=1; //Counter for plant number
     
@@ -99,6 +116,8 @@ int main() {
                 }
                 break;
             }
+
+            // Total Cost Case
             case 4: {
                 double totalCost = 0;
                 for (auto it = plants.begin(); it != plants.end(); ++it) {
@@ -107,19 +126,26 @@ int main() {
                 cout << "Total cost of all plants: " << totalCost << "\n";
                 break;
             }
+
+            // Sorting by Name Case
             case 5: {
                 sort(plants.begin(), plants.end(), compareByName);
                 break;
             }
+
+            // Sorting by Cost Case
             case 6: {
                 sort(plants.begin(), plants.end(), compareByCost);
                 break;
             }
+            
+            // Exit
             case 7: {
                 return 0;
             }
-            default: {
-                cout << "Invalid choice, try again.\n";
+
+            default:{
+                cout << "Invalid Input" << endl;
                 break;
             }
         }

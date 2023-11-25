@@ -8,15 +8,15 @@ class Plant{
         string name;
         double cost;
     public:
-        //Setter
         Plant(string plantName, double plantCost);
-        // Getters
+
         string getName();
         double getCost();
-        // Overloaded Operators
-        bool operator == (string pName);        
-        virtual void display(ostream& out);
+        bool operator == (string pName);   
+
         friend ostream& operator << (ostream& out, Plant& plant);
+        virtual void display(ostream& out);
+
 };
 
 class Flower : public Plant{
@@ -25,7 +25,9 @@ class Flower : public Plant{
         bool isAnnual;
     public:
         Flower(string plantName, double plantCost, string flowerColor, bool flowerType);
+
         string getColor();
+
         virtual void display(ostream& out);
         friend ostream& operator << (ostream& out, Flower& f);
 };

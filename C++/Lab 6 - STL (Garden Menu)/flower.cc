@@ -10,11 +10,14 @@ Plant :: Plant(string plantName, double plantCost){
     cost = plantCost;
 }
 
+// Getters
 string Plant :: getName(){ return name; }
 double Plant :: getCost(){ return cost; }
 
+// Setters
 bool Plant :: operator == (string pName){ return (name == pName); }
 
+// Display Formatting
 void Plant :: display(ostream& out){ out << name << " $" << cost; }
 
 ostream& operator << (ostream& out, Plant& plant){
@@ -29,15 +32,16 @@ Flower :: Flower(string plantName, double plantCost, string flowerColor, bool fl
     color = flowerColor;
     isAnnual = flowerType;
 }
+// Getters
 string Flower :: getColor(){ return color; }
 
 void Flower :: display(ostream& out){
     Plant :: display(out);
     out << " " << color;
     if(isAnnual){
-        out << " Annual";
+        out << "        Annual";
     } else{
-        out << " Perennial";
+        out << "        Perennial";
     }
 }
 
